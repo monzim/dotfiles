@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/run/media/monzim/CodeX/Flutter/monzim_test'
+let g:netrw_dirhist_2='/run/media/monzim/CodeX/Flutter/new_app/lib'
+let g:netrw_dirhist_1='/run/media/monzim/CodeX/Flutter/new_app'
