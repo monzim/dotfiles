@@ -1,6 +1,5 @@
 call plug#begin('/home/monzim/.config/nvim/pack/')
 
-
 " File and folder management
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'junegunn/fzf.vim'
@@ -9,7 +8,6 @@ Plug 'preservim/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " NerdTree Git info
 Plug 'Xuyuanp/nerdtree-git-plugin'
-
 
 " Snippets
 Plug 'SirVer/ultisnips'
@@ -31,16 +29,24 @@ Plug 'leafgarland/typescript-vim'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Theme
 Plug 'tomasr/molokai'
 Plug 'morhetz/gruvbox'
+Plug 'HenryNewcomer/vim-theme-papaya'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'kyoz/purify', { 'rtp': 'vim' }
+Plug 'drewtempelmeyer/palenight.vim'
 
 " My Added One
 Plug 'liuchengxu/vim-which-key'
 
 " Color HighLight
-"Plug 'ap/vim-css-color'
+Plug 'ap/vim-css-color'
+
+
 
 "Bracket Colorise
 Plug 'luochen1990/rainbow'
@@ -50,10 +56,37 @@ Plug 'ryanoasis/vim-devicons'
 
 " Github Copilot
 Plug 'https://github.com/github/copilot.vim'
+" WakaTime
+Plug 'wakatime/vim-wakatime'
+
+
+
+" css3 syntax highlight
+Plug 'hail2u/vim-css3-syntax'
+
+" Syntax hightlight for .js
+Plug 'pangloss/vim-javascript'
+
+
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}
+Plug 'iamcco/coc-angular', {'do': 'yarn install --frozen-lockfile && yarn build'}
+Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
+
+
+" Markdown preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
 
 call plug#end()
-"colorscheme molokai
+
+"colorscheme molokai onehalflight
+"colorscheme onehalfdark
+syntax on
+"set background=dark
 colorscheme gruvbox
+"highlight Normal ctermfg=grey ctermbg=black guifg=grey guibg=black
+highlight Normal ctermfg=white ctermbg=black
 
 " Color HighLight
 
@@ -95,6 +128,8 @@ map <leader>l :wincmd l <CR>
 
 nnoremap <C-b> :NERDTreeToggle<CR>
 "nnoremap <C-S-b> :NERDTreeFind<CR>
+let g:NERDTreeWinPos = "right"
+
 
 let g:dart_format_on_save = 1
 let g:dartfmt_options = ['--fix', '--line-length 120']
@@ -120,7 +155,8 @@ function! s:show_documentation()
   endif
 endfunction
 
-nmap <C-P> :FZF<CR>
+"nmap <C-P> :FZF<CR>
+nmap <C-P> :Files<CR>
 
 nmap <leader>gs :G<CR>
 nmap <leader>gh :diffget //2<CR>
@@ -173,10 +209,33 @@ let g:NERDTreeGitStatusWithFlags = 1
 au BufNewFile,BufRead *.ts setlocal filetype=typescript
 au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 
-" Vim Which Key
+" Vim Airline
+"let g:airline#extensions#tabline#enabled = 1
+
+" My Custom KeyStrokes
+nnoremap ; :
+vnoremap ; :
+" Paste last thing yanked, not deleted
+nmap ,p "0p
+nmap ,P "0P
+" Move between vim windows
+nmap <up> <C-w><up>
+nmap <down> <C-w><down>
+nmap <left> <C-w><left>
+nmap <right> <C-w><right>
+" Write only if something is chnanged
+nnoremap <leader>w :up<CR>
+
+" Moveing text
+"vnoremap J :m '>+1<CR>gv=gv
+"vnoremap K :m '<-2<CR>gv=gv
+"inoremap <C-j> <esc>:m .+1<CR>==
+"inoremap <C-k> <esc>:m .-2<CR>==
+"nnoremap <leader>k :m '.-2<CR>==
+"nnoremap <leader>j :m '.+1<CR>==
+
+"Vim Which Key
 "source $HOME/.config/nvim/keys/which-key.vim
-
-
 
 " By default timeoutlen is 1000 ms
 "set timeoutlen=500

@@ -152,6 +152,9 @@ ksuperkey -e 'Super_R=Alt_L|F1' &
 # Enable power management
 xfce4-power-manager &
 
+# Running Ulauncher
+ulauncher &
+
 # Fix cursor
 xsetroot -cursor_name left_ptr
 

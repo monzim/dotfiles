@@ -152,7 +152,7 @@ alias gp='git push origin master'
 # ****My___Alias*****
 alias polyconfig='code ~/.config/bspwm/polybar'
 alias picomconfig='nvim ~/.config/bspwm/picom.conf'
-
+alias nvimconfig='nvim /home/monzim/.config/nvim/init.vim'
 alias sona='cd /run/media/monzim/CodeX'
 alias hflt='cd /run/media/monzim/CodeX/Flutter'
 
