@@ -27,7 +27,7 @@ workspaces() {
 	name=1
 	for monitor in `bspc query -M`; do
 		#bspc monitor ${monitor} -n "$name" -d 'I' 'II' 'III' 'IV' 'V' 'VI' 'VII' 'VIII'
-		bspc monitor ${monitor} -n "$name" -d '' '' '' '' '' '' '' '' 
+		bspc monitor ${monitor} -n "$name" -d '' ''  '' '' '' '' '' '' 
 		# bspc monitor ${monitor} -n "$name" -d '' '' '' '' '漣' '' '' ''
 
 		let name++
@@ -39,7 +39,7 @@ bspc config border_width 2.35
 bspc config window_gap 10
 bspc config split_ratio 0.60
 
-bspc config focused_border_color "#42A5F5" 
+bspc config focused_border_color '#F76D01' #"#D15C5C" #"#42A5F5" 
 bspc config normal_border_color "#4a697d"
 bspc config active_border_color "$MAGENTA"
 bspc config presel_feedback_color "$GREEN"
@@ -153,7 +153,7 @@ ksuperkey -e 'Super_R=Alt_L|F1' &
 xfce4-power-manager &
 
 # Running Ulauncher
-ulauncher &
+#ulauncher &
 
 # Fix cursor
 xsetroot -cursor_name left_ptr

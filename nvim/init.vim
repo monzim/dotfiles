@@ -48,9 +48,9 @@ Plug 'dart-lang/dart-vim-plugin'
 
 " Typescript
 Plug 'ianks/vim-tsx'
-Plug 'leafgarland/typescript-vim'
+"Plug 'leafgarland/typescript-vim' "This highligt not so good
 
-" Git
+"Git
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -68,12 +68,13 @@ Plug 'wakatime/vim-wakatime'
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}
+
 " Angular Support for vim
 Plug 'iamcco/coc-angular', {'do': 'yarn install --frozen-lockfile && yarn build'}
 Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
 
 " Markdown preview
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
+"Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
 
 " Themeing and Coloring
 Plug 'tomasr/molokai'
@@ -99,8 +100,8 @@ call plug#end()
 " Theme and Color Settings colorscheme molokai onehalflight
 colorscheme gruvbox
 "highlight Normal ctermfg=grey ctermbg=black guifg=grey guibg=black
-highlight ColorColumn ctermbg=0 guibg=lightgrey
-highlight Normal ctermfg=white ctermbg=black
+"highlight ColorColumn ctermbg=0 guibg=lightgrey
+highlight Normal ctermfg=white ctermbg=black guifg=grey guibg=black
 autocmd ColorScheme * highlight CursorLineNr cterm=bold term=bold gui=bold
 
 " Bracket Colorise
@@ -136,6 +137,9 @@ let g:coc_global_extensions = [
   \ 'coc-html',
   \ 'coc-json',
   \ ]
+
+
+
 
 " by default .ts file are not identified as typescript and .tsx files are not
 " identified as typescript react file, so add following

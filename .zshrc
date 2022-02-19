@@ -151,10 +151,23 @@ alias gp='git push origin master'
 
 # ****My___Alias*****
 alias polyconfig='code ~/.config/bspwm/polybar'
+alias bspwmconfig='nvim ~/.config/bspwm/bspwmrc'
 alias picomconfig='nvim ~/.config/bspwm/picom.conf'
-alias nvimconfig='nvim /home/monzim/.config/nvim/init.vim'
-alias sona='cd /run/media/monzim/CodeX'
-alias hflt='cd /run/media/monzim/CodeX/Flutter'
+alias nvimconfig='nvim /home/monzim/.config/nvim'
+alias gocode='cd /run/media/monzim/CodeX/'
+alias dotfiles='cd /run/media/monzim/CodeX/Dotfiles'
+alias goang='cd /run/media/monzim/CodeX/Angular'
+alias goflt='cd /run/media/monzim/CodeX/Flutter'
+
+
+
+add-pac(){
+  sudo pacman -S $1
+} 
+find-pac(){
+  pacman -Ss $1 | grep $1
+}
+
 
 find_alias() {
 		zsh -ixc : 2>&1 |grep "$1"

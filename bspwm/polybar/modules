@@ -323,7 +323,7 @@ format-disconnected-prefix = " "
 format-disconnected-prefix-font = 2
 format-disconnected-prefix-foreground = ${color.RED}
 
-label-connected = "%local_ip% | %downspeed% %upspeed%%{A}"
+label-connected = "%local_ip% %downspeed% 祝%upspeed%%{A}"
 label-disconnected ="%{A1:networkmanager_dmenu &:}Offline%{A}"
 
 ; label-connected = "%{A1:networkmanager_dmenu &:}%downspeed% | %upspeed%%{A}"
