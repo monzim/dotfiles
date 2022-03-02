@@ -1,35 +1,38 @@
-## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
-## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
+# Best Fonts
+# Operator Mono
+# Cascadia Code
+# Fira Code
+# JetBrains Mono
+# IBM Plex Mono
 
-# Font configuration
 font:
   # Normal (roman) font face
   normal:
-    family: "Hack"
+    family: "Fira Code"
     style: Regular
 
   # Bold font face
   bold:
-    family: "Hack"
+    family: "Operator Mono"
     style: Bold
 
   # Italic font face
   italic:
-    family: "Hack"
+    family: "Operator Mono"
     style: Italic
 
   # Bold italic font face
   bold_italic:
-    family: "Hack"
+    family: "IBM Plex Mono"
     style: Bold Italic
 
-  # Point size
-  size: 9.7
+  # Point size 9.7
+  size: 10.2
 
   # Offset
   #offset:
-    # x: -1
-    # y: 0
+  # x: -1
+  # y: 0
 
   # Glyph offset
   #glyph_offset:

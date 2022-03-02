@@ -8,8 +8,8 @@ type = internal/pulseaudio
 
 ; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
 ; If not, uses default sink
-sink = alsa_output.pci-0000_12_00.3.analog-stereo
-
+;sink = alsa_output.pci-0000_12_00.3.analog-stereo
+sink = alsa_output.pci-0000_00_1b.0.analog-stereo
 ; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
 ; Default: true
 use-ui-max = false
@@ -200,7 +200,7 @@ label-focused-padding = 1
 
 label-occupied = %name%
 label-occupied-foreground =  "#3cafe8"
-label-occupied-background = "#222D32"
+label-occupied-background = ${color2.BACKGROUND}
 ;label-occupied-underline = ${color.GREEN}
 label-occupied-padding = 1
 
@@ -226,8 +226,9 @@ label-separator-foreground = ${color.ALTBLACK}
 type = internal/bspwm
 
 format = <label-mode>
-format-background = ${color.YELLOW}
-format-foreground = ${color.BACKGROUND}
+format-background = ${color2.YELLOW}
+format-foreground = #000000
+;${color2.BACKGROUND}
 format-padding = 1
 
 label-monocle = "M"
@@ -314,9 +315,10 @@ accumulate-stats = true
 unknown-as-up = true
 
 format-connected = <label-connected>
-format-connected-prefix = " "
+format-connected-prefix = "殺 "
 format-connected-prefix-font = 2
-format-connected-prefix-foreground = ${color.CYAN}
+format-connected-prefix-foreground = #21e6c1
+;${colors2.NETACTIVE}
 
 format-disconnected = <label-disconnected>
 format-disconnected-prefix = " "
@@ -377,9 +379,9 @@ content-padding = 2
 type = custom/text
 content = ◆
 
-content-background = ${color.BACKGROUND}
+content-background = ${color2.BACKGROUND}
 ; content-foreground = ${color.BLACK}
-content-foreground = ${color.BLACK}
+content-foreground = ${color2.BLACK}
 content-padding = 0.8
 
 [module/yyep]
@@ -387,8 +389,8 @@ type = custom/text
 content = ◆
 
 ; content-background = "#222D3270"
-content-background = ${color.BACKGROUND}
-content-foreground = ${color.BLACK}
+content-background = ${color2.BACKGROUND}
+content-foreground = ${color2.BLACK}
 content-padding = 1.0
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
@@ -409,7 +411,7 @@ mount-0 = /
 
 ; Seconds to sleep between updates
 ; Default: 30
-interval = 30
+interval = 20
 
 ; Display fixed precision values
 ; Default: false

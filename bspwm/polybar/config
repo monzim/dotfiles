@@ -11,6 +11,7 @@ margin-top = 0
 
 include-file = ~/.config/bspwm/polybar/system
 include-file = ~/.config/bspwm/polybar/colors
+include-file = ~/.config/bspwm/polybar/colors2
 include-file = ~/.config/bspwm/polybar/modules
 
 [bar/main]
@@ -24,23 +25,23 @@ fixed-center = true
 width = 95%
 height = 20
 offset-x = 30
-offset-y = 6
+offset-y =2 
 
 ; background = "#222D3270"
 ; foreground = "#000000"
 
-background = ${color.BACKGROUND}
-foreground = ${color.FOREGROUND}
+background = ${color2.BACKGROUND}
+foreground = ${color2.FOREGROUND}
 
 radius-top = 0.0
 radius-bottom = 0.0
 
 line-size = 1
-line-color = ${color.BLUE}
+line-color = ${color2.BLUE}
 
 border-size = 3
-border-color = ${color.BACKGROUND}
-; border-color = ${color.FOREGROUND}
+border-color = ${color2.BACKGROUND}
+;border-color = ${color2.FOREGROUND}
 
 
 padding = 1
@@ -54,7 +55,7 @@ font-3 = "Iosevka:style=bold:"size=10;3"
 
 modules-left = mod ygep bspwm
 modules-center = ethernet
-modules-right =cpu used-memory filesystem mpd yyep volume yyep date
+modules-right =cpu used-memory filesystem yyep volume yyep date
 
 separator =
 spacing = 0
@@ -68,7 +69,7 @@ tray-position = right
 tray-detached = false
 tray-maxsize = 16
 tray-transparent = false
-; tray-background = ${color.FOREGROUND}
+; tray-background = ${color2.FOREGROUND}
 tray-background = "#FFFFFF"
 tray-offset-x = 0
 tray-offset-y = 0

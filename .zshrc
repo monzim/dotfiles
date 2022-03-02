@@ -154,6 +154,8 @@ alias polyconfig='code ~/.config/bspwm/polybar'
 alias bspwmconfig='nvim ~/.config/bspwm/bspwmrc'
 alias picomconfig='nvim ~/.config/bspwm/picom.conf'
 alias nvimconfig='nvim /home/monzim/.config/nvim'
+alias dotconfig='nvim /run/media/monzim/CodeX/Dotfiles'
+
 alias gocode='cd /run/media/monzim/CodeX/'
 alias dotfiles='cd /run/media/monzim/CodeX/Dotfiles'
 alias goang='cd /run/media/monzim/CodeX/Angular'
@@ -161,11 +163,30 @@ alias goflt='cd /run/media/monzim/CodeX/Flutter'
 
 
 
-add-pac(){
+findpac(){
+
+if [[ $2 == '-i' ]]; then
+  echo "Installing $1 😊"
   sudo pacman -S $1
-} 
-find-pac(){
+elif [[ $2 == '-s' ]]; then
+  yay -Ss $1 | grep $1
+
+elif [[ $2 == '-a' ]]; then
+  echo "Install >>$1<< from aur 😀"
+  yay -S $1
+
+elif [[ $2 == '-r' ]]; then
+  echo "Removing 😔 $1"
+  sudo pacman -R $1
+
+elif [[ $2 == '-rr' ]]; then
+   yay -R $1
+
+else
   pacman -Ss $1 | grep $1
+
+fi
+
 }
 
 
@@ -266,5 +287,15 @@ ram_cln(){
 	free -h
 
 }
+
+# Start Virtual Machine and Network
+start_vm_service(){
+  sudo virsh net-start default
+  systemctl start libvirtd.start_vm_service
+  systemctl is-active libvirtd.service
+  sudo virsh net-list --all
+
+}
+
 
 

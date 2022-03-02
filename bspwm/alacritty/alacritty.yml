@@ -7,9 +7,9 @@
 
 ## Import files (Colors, Fonts, Etc) c_colors colors
 import:
- # - /home/monzim/.config/alacritty/colorschemes/Tango_dark.yaml
+  # - /home/monzim/.config/alacritty/colorschemes/Tango_dark.yaml
   - ~/.config/bspwm/alacritty/c_colors.yml
-  - ~/.config/bspwm/alacritty/fonts.yml
+  - ~/.config/bspwm/alacritty/c_fonts.yml
 
 ## Set environment variables
 env:
