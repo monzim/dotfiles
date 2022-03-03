@@ -1,0 +1,95 @@
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+;; Global WM Settings
+
+[global/wm]
+margin-bottom = 0
+margin-top = 0
+
+include-file = ~/.config/polybar/system
+include-file = ~/.config/polybar/colors
+include-file = ~/.config/polybar/colors2
+include-file = ~/.config/polybar/modules
+
+;; ===================== BARS ========================
+[bar/main]
+monitor =
+monitor-strict = false
+override-redirect = false
+
+bottom = false
+fixed-center = true
+
+height = 30
+radius = 0
+border = 0
+dim-value = 1.0
+wm-restack = bspwm
+tray-position = none
+
+background = ${color2.BACKGROUND}
+foreground = ${color2.FOREGROUND}
+
+padding = 1
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = "Iosevka Nerd Font:size=10;3"
+font-1 = "Iosevka Nerd Font:size=10;3"
+font-2 = "google\-mdi:size=12;3"
+font-3 = "Iosevka:style=bold:"size=10;3"
+
+[bar/one]
+inherit = bar/main
+width = 16%
+height = 15
+offset-y =2 
+offset-x = 25
+radius = 5
+
+modules-left = mod bspwm
+
+padding =1 
+module-margin-left = 1
+module-margin-right = 0
+
+font-0 = "Iosevka Nerd Font:size=9;3"
+font-1 = "Iosevka Nerd Font:size=9;3"
+font-2 = "google\-mdi:size=10;3"
+font-3 = "Iosevka:style=bold:"size=9;3"
+
+[bar/two]
+inherit = bar/main
+width = 26%
+height = 15
+radius = 5
+offset-y =2 
+offset-x = 990
+padding-right = 2
+
+font-0 = "Iosevka Nerd Font:size=9;3"
+font-1 = "Iosevka Nerd Font:size=9;3"
+font-2 = "google\-mdi:size=10;3"
+font-3 = "Iosevka:style=bold:"size=9;3"
+; separator = "  "
+modules-center = ethernet yyep used-memory yyep volume yyep date
+
+[bar/three]
+inherit = bar/main
+width = 80%
+height = 15
+radius = 5
+offset-y =0
+offset-x = 80
+bottom = true
+separator = "  "
+
+modules-left = cpu temperature
+modules-center =   network mpd kdeconnect
+modules-right =   filesystem file_root  file_home  file_code
+
+
+font-0 = "Iosevka Nerd Font:size=9;3"
+font-1 = "Iosevka Nerd Font:size=9;3"
+font-2 = "google\-mdi:size=10;3"
+font-3 = "Iosevka:style=bold:"size=9;3"

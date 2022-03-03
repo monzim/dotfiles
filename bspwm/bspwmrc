@@ -160,6 +160,9 @@ xfce4-power-manager &
 #ulauncher &
 aw-qt & #activitywatch Autostart
 
+# Polybar Run
+$HOME/.config/polybar/launch.sh &
+
 #RClone Auto Run TODO: YOU MUST INSTALL RCLONE BEFORE RUNNING THIS Rclone is CloudStorage Client
 #rclone rcd --rc-web-gui &
 
@@ -175,7 +178,7 @@ exec mpd &
 
 # Start bspwm scripts
 bspcolors
-bspbar
+# bspbar
 bspcomp
 bspdunst
 # borderSet
