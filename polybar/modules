@@ -116,7 +116,7 @@ full-at = 99
 battery = ${system.battery}
 adapter = ${system.adapter}
 
-poll-interval = 2
+poll-interval = 4
 time-format = %H:%M
 
 format-charging = <animation-charging> <label-charging>
@@ -194,7 +194,7 @@ label-monitor = %name%
 
 label-focused = %name%
 label-focused-foreground = "#EC7875"
-label-focused-background = "#01345B"
+label-focused-background = "#04BFBF90"
 label-focused-underline = "#C0CC1D"
 label-focused-padding = 1
 
@@ -247,7 +247,7 @@ label-private = " | Private"
 [module/date]
 type = internal/date
 
-interval = 1.0
+interval = 5.0
 time = %I:%M %p
 time-alt =  %Y-%m-%d%
 
@@ -256,8 +256,8 @@ format-prefix = " "
 format-prefix-font = 3
 format-prefix-foreground = ${color.MAGENTA}
 
-label = %time%
-label-font = 3
+label = "%{F#2cb978}%time%"
+label-font = "IBM Plex Mono:style=bold:"size=10;3"
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -268,7 +268,7 @@ type = internal/mpd
 ;;port = 6600
 ;;password = mysecretpassword
 
-interval = 2
+interval = 5
 
 format-online = <label-song> <icon-prev> <toggle> <icon-next>
 ; format-online-prefix = ""
@@ -314,7 +314,7 @@ accumulate-stats = true
 unknown-as-up = true
 
 format-connected = <label-connected>
-format-connected-prefix = "殺 "
+; format-connected-prefix = "殺 "
 format-connected-prefix-font = 2
 format-connected-prefix-foreground = #21e6c1
 ;${colors2.NETACTIVE}
@@ -324,7 +324,7 @@ format-disconnected-prefix = " "
 format-disconnected-prefix-font = 2
 format-disconnected-prefix-foreground = ${color.RED}
 
-label-connected = "%downspeed% 祝%upspeed%%{A}"
+label-connected = " %downspeed% 祝 %upspeed%%{A}"
 label-disconnected ="%{A1:networkmanager_dmenu &:}Offline%{A}"
 
 ; label-connected = "%{A1:networkmanager_dmenu &:}%downspeed% | %upspeed%%{A}"
@@ -572,7 +572,7 @@ type = internal/temperature
 
 ; Seconds to sleep between updates
 ; Default: 1
-interval = 1
+interval = 4
 
 ; Thermal zone to use
 ; To list all the zone types, run 
