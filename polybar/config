@@ -39,7 +39,7 @@ font-1 = "Iosevka Nerd Font:size=10;3"
 font-2 = "google\-mdi:size=12;3"
 font-3 = "Iosevka:style=bold:"size=10;3"
 
-[bar/one]
+[bar/top_left]
 inherit = bar/main
 width = 16%
 height = 15
@@ -58,7 +58,7 @@ font-1 = "Iosevka Nerd Font:size=9;3"
 font-2 = "google\-mdi:size=10;3"
 font-3 = "Iosevka:style=bold:"size=9;3"
 
-[bar/two]
+[bar/top_right]
 inherit = bar/main
 width = 28%
 height = 15
@@ -74,7 +74,7 @@ font-3 = "IBM Plex Mono:style=bold:"size=6;3"
 separator = "  "
 modules-center = ethernet used-memory volume date
 
-[bar/three]
+[bar/bottom_center]
 inherit = bar/main
 radius = 5
 bottom = true
@@ -87,7 +87,7 @@ foreground = #F2E7DC
 separator = "  "
 override-redirect = true
 
-tray-position = right
+tray-position = none
 tray-detached = false
 tray-maxsize = 16
 tray-transparent = false
@@ -107,3 +107,32 @@ font-0 = "IBM Plex Mono:size=10;3"
 font-1 = "Iosevka Nerd Font:size=10;3"
 font-2 = "google\-mdi:size=12;3"
 font-3 = "Iosevka:style=bold:"size=10;3"
+
+
+[bar/top_center]
+inherit = bar/main
+width = 20%
+height = 15
+radius = 5
+offset-y =2 
+offset-x = 680
+padding-right = 2
+
+font-0 = "Operator Mono:size=9;3"
+font-1 = "Iosevka Nerd Font:size=9;3"
+font-2 = "google\-mdi:size=10;3"
+font-3 = "IBM Plex Mono:style=bold:"size=6;3"
+separator = "  "
+
+tray-position = right
+tray-detached = false
+tray-maxsize = 16
+tray-transparent = false
+tray-background = #00FFFFFF
+tray-foreground = ${color2.FOREGROUND}
+tray-offset-x = 0
+tray-offset-y = 0
+tray-padding = 0
+tray-scale = 1.0
+background = #00FFFFFF 
+modules-left = my_text

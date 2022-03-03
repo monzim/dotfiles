@@ -749,3 +749,8 @@ ramp-volume-foreground = ${color.RED}
 type = custom/script  
 exec = "/home/monzim/.config/polybar/script/polybar-kdeconnect/polybar-kdeconnect.sh -d"  
 tail = true
+
+
+[module/my_text]
+type = custom/text
+content =  " %{F#00FFFFFF}A"
