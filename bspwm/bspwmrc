@@ -27,7 +27,7 @@ workspaces() {
 	name=1
 	for monitor in `bspc query -M`; do
 		#bspc monitor ${monitor} -n "$name" -d 'I' 'II' 'III' 'IV' 'V' 'VI' 'VII' 'VIII'
-		bspc monitor ${monitor} -n "$name" -d '' ''  '' '' '' '' '' '' 
+		bspc monitor ${monitor} -n "$name" -d '' ''  '' '' '' '' '' '' 
 		# bspc monitor ${monitor} -n "$name" -d '' '' '' '' '漣' '' '' ''
 
 		let name++
@@ -65,7 +65,7 @@ for i in ${code[@]}; do
    bspc rule -a $i desktop='^2' follow=on focus=on; done
 
 # 3 > web
-bspc rule -a firefox desktop='^3' follow=on focus=on
+# bspc rule -a firefox desktop='^3' follow=on focus=on
 bspc rule -a chromium desktop='^3' follow=on focus=on
 bspc rule -a brave desktop='^3' follow=on focus=on
 bspc rule -a Google-chrome desktop='^3' follow=on focus=on  
@@ -73,7 +73,7 @@ bspc rule -a Google-chrome desktop='^3' follow=on focus=on
 # 4 > files
 declare -a files=(Pcmanfm Thunar qBittorrent dolphin)
 for i in ${files[@]}; do
-   bspc rule -a $i desktop='^4' follow=on focus=on; done
+   bspc rule -a $i desktop='^4' follow=on focus=on rectangle=600x500; done
 
 # 5 > office and docs
 declare -a office=(Gucharmap Atril Evince \

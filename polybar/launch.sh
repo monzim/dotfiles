@@ -11,6 +11,7 @@ polybar main &
 polybar top_left &
 polybar top_right &
 polybar top_center &
+polybar top_extra &
 polybar bottom_center &
 
 echo "Bar launched..."

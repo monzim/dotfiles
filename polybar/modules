@@ -194,7 +194,7 @@ label-monitor = %name%
 
 label-focused = %name%
 label-focused-foreground = "#EC7875"
-label-focused-background = "#04BFBF90"
+label-focused-background = "#2873E2"
 label-focused-underline = "#C0CC1D"
 label-focused-padding = 1
 

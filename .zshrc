@@ -150,6 +150,10 @@ alias gp='git push origin master'
 
 
 # ****My___Alias*****
+alias plz='sudo'
+alias please='sudo'
+alias c='clear'
+
 alias polyconfig='code ~/.config/bspwm/polybar'
 alias bspwmconfig='nvim ~/.config/bspwm/bspwmrc'
 alias picomconfig='nvim ~/.config/bspwm/picom.conf'
@@ -161,7 +165,7 @@ alias dotfiles='cd /run/media/monzim/CodeX/Dotfiles'
 alias goang='cd /run/media/monzim/CodeX/Angular'
 alias goflt='cd /run/media/monzim/CodeX/Flutter'
 
-
+alias start_vm_service='systemctl start libvirtd.service; systemctl is-active libvirtd.service; sudo virsh net-start default; sudo virsh net-list --all'
 
 findpac(){
 
@@ -289,13 +293,13 @@ ram_cln(){
 }
 
 # Start Virtual Machine and Network
-start_vm_service(){
-  sudo virsh net-start default
-  systemctl start libvirtd.start_vm_service
-  systemctl is-active libvirtd.service
-  sudo virsh net-list --all
-
-}
+# start_vm_service(){
+#   systemctl start libvirtd.start_vm_service
+#   # systemctl is-active libvirtd.service
+#   # sudo virsh net-start default
+#   # sudo virsh net-list --all
+# 
+# }
 
 
 

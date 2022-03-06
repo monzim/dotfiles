@@ -21,7 +21,7 @@ bottom = false
 fixed-center = true
 
 height = 30
-radius = 0
+radius = 3
 border = 0
 dim-value = 1.0
 wm-restack = bspwm
@@ -34,6 +34,15 @@ padding = 1
 module-margin-left = 0
 module-margin-right = 0
 
+
+# line-size = 1
+#  line-color = ${color2.BLUE}
+# 
+# border-size = 1
+# border-color = #526C7B
+# 
+
+
 font-0 = "Iosevka Nerd Font:size=10;3"
 font-1 = "Iosevka Nerd Font:size=10;3"
 font-2 = "google\-mdi:size=12;3"
@@ -41,17 +50,17 @@ font-3 = "Iosevka:style=bold:"size=10;3"
 
 [bar/top_left]
 inherit = bar/main
-width = 16%
+width = 17.5%
 height = 15
 offset-y =2 
 offset-x = 25
-radius = 5
 
-modules-left = mod bspwm
+modules-left = mod bspwm gap kdeconnect
 
 padding =1 
+padding-right = 1
 module-margin-left = 1
-module-margin-right = 0
+module-margin-right = 0 
 
 font-0 = "Iosevka Nerd Font:size=9;3"
 font-1 = "Iosevka Nerd Font:size=9;3"
@@ -62,7 +71,6 @@ font-3 = "Iosevka:style=bold:"size=9;3"
 inherit = bar/main
 width = 28%
 height = 15
-radius = 5
 offset-y =2 
 offset-x = 960
 padding-right = 2
@@ -76,7 +84,6 @@ modules-center = ethernet used-memory volume date
 
 [bar/bottom_center]
 inherit = bar/main
-radius = 5
 bottom = true
 width = 80%
 height = 23
@@ -100,8 +107,8 @@ tray-scale = 1.0
 
 
 modules-left = cpu temperature
-modules-center =   network mpd
-modules-right =   filesystem file_root  file_home  file_code kdeconnect
+modules-center =   network 
+modules-right =   mpd
 
 font-0 = "IBM Plex Mono:size=10;3"
 font-1 = "Iosevka Nerd Font:size=10;3"
@@ -113,10 +120,10 @@ font-3 = "Iosevka:style=bold:"size=10;3"
 inherit = bar/main
 width = 20%
 height = 15
-radius = 5
 offset-y =2 
 offset-x = 680
 padding-right = 2
+border-size = 0
 
 font-0 = "Operator Mono:size=9;3"
 font-1 = "Iosevka Nerd Font:size=9;3"
@@ -136,3 +143,20 @@ tray-padding = 0
 tray-scale = 1.0
 background = #00FFFFFF 
 modules-left = my_text
+
+
+[bar/top_extra]
+inherit = bar/main
+width = 18%
+height = 16
+offset-y =2 
+offset-x = 520
+
+font-0 = "Fira Code:size=9;3"
+font-1 = "Iosevka Nerd Font:size=9;3"
+font-2 = "google\-mdi:size=10;3"
+font-3 = "IBM Plex Mono:style=bold:"size=6;3"
+separator = "  "
+
+background =#343944 
+modules-center= filesystem file_root  file_home  file_code  
