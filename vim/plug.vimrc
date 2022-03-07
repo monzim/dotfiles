@@ -15,6 +15,10 @@ Plug 'elvessousa/sobrio'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'kyoz/purify', { 'rtp': 'vim' }
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'cocopon/iceberg.vim'
+Plug 'joshdick/onedark.vim'
+Plug 'sainnhe/sonokai'
+
 
 "Statusline
 Plug 'vim-airline/vim-airline'
