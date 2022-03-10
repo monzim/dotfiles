@@ -35,6 +35,8 @@ Plug 'ap/vim-css-color' "Color HighLight
 Plug 'luochen1990/rainbow'  "Bracket Colorise
 Plug 'ryanoasis/vim-devicons'   "Devicons
 Plug 'jiangmiao/auto-pairs' " AutoPair
+Plug 'preservim/nerdcommenter' "Comment
+Plug 'airblade/vim-gitgutter' "Git
 
 " Markdown preview
 "Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}

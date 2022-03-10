@@ -27,11 +27,11 @@ height = 20
 offset-x = 30
 offset-y =2 
 
-; background = "#222D3270"
-; foreground = "#000000"
+background = "#012030"
+;foreground = "#000000"
 
-background = ${color2.BACKGROUND}
-foreground = ${color2.FOREGROUND}
+;background = ${color2.BACKGROUND}
+;foreground = ${color2.FOREGROUND}
 
 radius-top = 0.0
 radius-bottom = 0.0

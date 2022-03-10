@@ -89,8 +89,8 @@ width = 80%
 height = 23
 offset-x = 145
 offset-y =2 
-background = #0D0D0D 
-foreground = #F2E7DC
+;background = #0D0D0D 
+;foreground = #F2E7DC
 separator = "  "
 override-redirect = true
 
@@ -158,5 +158,5 @@ font-2 = "google\-mdi:size=10;3"
 font-3 = "IBM Plex Mono:style=bold:"size=6;3"
 separator = "  "
 
-background =#343944 
+# background =#343944 
 modules-center= filesystem file_root  file_home  file_code  

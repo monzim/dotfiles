@@ -7,10 +7,12 @@ export ZSH=$HOME/.oh-my-zsh
 # My Added Path
 export PATH="$PATH:/var/lib/flutter/bin"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
-#export PATH="$PATH:/var/lib/android-studio/bin"
 export CHROME_EXECUTABLE="/usr/bin/google-chrome-stable"
+export PATH="$PATH:/var/lib/android-studio/bin"
 export ANDROID_HOME=/var/lib/Android/Sdk/
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
+# export PATH="$PATH:/var/lib/Android/Sdk/emulator"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -154,20 +156,23 @@ alias plz='sudo'
 alias please='sudo'
 alias c='clear'
 
-alias polyconfig='code ~/.config/bspwm/polybar'
+alias polyconfig='nvim ~/.config/polybar'
 alias bspwmconfig='nvim ~/.config/bspwm/bspwmrc'
+alias sxhconfig='nvim ~/.config/sxhkd/sxhkdrc'
 alias picomconfig='nvim ~/.config/bspwm/picom.conf'
 alias nvimconfig='nvim /home/monzim/.config/nvim'
 alias dotconfig='nvim /run/media/monzim/CodeX/Dotfiles'
+alias alasrconfig='nvim /run/media/monzim/CodeX/NVIM/Al-‘Asr_vim'
 
 alias gocode='cd /run/media/monzim/CodeX/'
 alias dotfiles='cd /run/media/monzim/CodeX/Dotfiles'
 alias goang='cd /run/media/monzim/CodeX/Angular'
 alias goflt='cd /run/media/monzim/CodeX/Flutter'
+alias gohub='cd /run/media/monzim/CodeX/Github'
 
 alias start_vm_service='systemctl start libvirtd.service; systemctl is-active libvirtd.service; sudo virsh net-start default; sudo virsh net-list --all'
 
-findpac(){
+pac(){
 
 if [[ $2 == '-i' ]]; then
   echo "Installing $1 😊"
@@ -211,29 +216,41 @@ git-new-commit() {
 
 
 # ADB Emulator
-adb-p2-xl-30(){
+adb-tv-29(){
 cd /var/lib/Android/Sdk/emulator
-./emulator -avd Pixel_2_XL_API_30 & disown
+./emulator -avd Android_TV_720p_API_29 & disown
 
 }
 
 
-adb-p5-32() {
+# adb-p3a-xl-29() {
+#   cd /var/lib/Android/Sdk/emulator
+#   ./emulator -avd Pixel_3a_XL_API_29 & disown
+# 	exit
+# }
+
+adb-tab-29() {
   cd /var/lib/Android/Sdk/emulator
-  ./emulator -avd Pixel_5_API_32 & disown
+  ./emulator -avd Pixel_C_API_29 & disown
 	exit
 }
 
-adb-tab-31() {
+adb-p5-29() {
   cd /var/lib/Android/Sdk/emulator
-  ./emulator -avd Pixel_C_API_32 & disown
+  ./emulator -avd Pixel_5_API_29 & disown
 	exit
 }
 
-adb-s21-fe() {
+adb-p2-xl-29(){
   cd /var/lib/Android/Sdk/emulator
-  ./emulator -avd Galaxy_S21_FE_API_30 & disown
-	exit
+  ./emulator -avd Pixel_2_XL_API_29 & disown
+  exit
+}
+
+launch() {
+  cd /var/lib/Android/Sdk/emulator
+  ./emulator -avd $1 & disown
+  exit
 }
 
 # connection with TCP and adb Devices with wifi Debugging 
