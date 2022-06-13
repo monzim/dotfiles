@@ -5,7 +5,7 @@
 
 # Terminal (alacritty)
 super + Return
-	bspterm
+	alacritty
 
 # Terminal (floating)
 super + shift + Return
@@ -32,7 +32,10 @@ ctrl + alt + t
 # Rofi Menus/Applets
 super + {w,m,x,r,s,i}
 	sh ~/.config/rofi/bin/{windows,mpd,powermenu,asroot,screenshot,network}
-
+super + e 
+	rofi -theme ~/.config/rofi/themes/emoji.rasi -show emoji -modi emoji
+super + y
+    rofi -theme ~/.config/rofi/themes/calculator.rasi -show calc -modi calc -no-show-match -no-sort
 ##---------- Applications ----------##
 
 # Launch Apps

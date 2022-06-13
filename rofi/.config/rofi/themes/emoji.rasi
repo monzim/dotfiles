@@ -1,6 +1,7 @@
 /* Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com> */
 /* Everyone is permitted to copy and distribute copies of this file under GNU-GPL3 */
 
+
 configuration {
     show-icons:                     false;
     display-drun: 					"";
@@ -13,14 +14,23 @@ configuration {
 @import "font.rasi"
 @import "colors.rasi"
 
+* {
+    m-background-color:                            #000000C2;
+    m-border-color: #f0f0f0;
+    m-selected-background-color:                   #217070;
+    m-textbox-prompt-colon-Background-color:       #FDD835;
+
+}
+
 window {
     transparency:                   "real";
-    background-color:               @BG;
+    background-color:               @m-background-color;
     text-color:                     @FG;
-    border:                  		0px;
-    border-color:                  	@OFF;
-    border-radius:                  10px;
-    width:                          450px;
+    border:                  		2px;
+    border-color:                  	@m-border-color;
+    border-radius:                  20px;
+    width:                          26%;
+    height:                         50%;
     x-offset:                       0px;
     y-offset:                       0px;
 }
@@ -28,7 +38,7 @@ window {
 prompt {
     enabled: 						true;
 	padding: 						8px;
-	background-color: 				@BG;
+	background-color: 				@m-background-color;
 	text-color: 					@IMG;
 }
 
@@ -36,8 +46,8 @@ textbox-prompt-colon {
 	expand: 						false;
 	str: 							"";
     border-radius:                  0px;
-    background-color:               @SEL;
-    text-color:                     @BG;
+    background-color:               @m-textbox-prompt-colon-Background-color;
+    text-color:                     @m-background-color;
     padding:                        8px 12px 8px 12px;
 	font:							"Iosevka Nerd Font 10";
 }
@@ -70,14 +80,14 @@ inputbar {
 }
 
 case-indicator {
-    background-color:               @BG;
+    background-color:               @m-background-color;
     text-color:                     @FG;
     spacing:                        0;
 }
 
 
 listview {
-    background-color:               @BG;
+    background-color:               @m-background-color;
     columns:                        1;
     lines:							5;
     spacing:                        4px;
@@ -87,14 +97,14 @@ listview {
 }
 
 mainbox {
-    background-color:               @BG;
+    background-color:               @m-background-color;
     children:                       [ inputbar, listview ];
     spacing:                       	15px;
     padding:                        15px;
 }
 
 element {
-    background-color:               @BG;
+    background-color:               @m-background-color;
     text-color:                     @FG;
     orientation:                    horizontal;
     border-radius:                  0px;
@@ -133,8 +143,8 @@ element alternate.active {
 }
 
 element selected {
-    background-color:               #5263B2;
-    text-color:                     @BG;
+    background-color:               @m-selected-background-color;
+    text-color:                     @m-background-color;
     border:                  		0px 0px 0px 0px;
     border-radius:                  0px;
     border-color:                  	@BDR;

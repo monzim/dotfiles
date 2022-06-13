@@ -27,6 +27,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'https://github.com/github/copilot.vim' "Github Copilot
 Plug 'wakatime/vim-wakatime' "wakatime
+Plug 'ActivityWatch/aw-watcher-vim' "MUST INSTALL ACTIVITY WATCH in your system
 
 "Git
 Plug 'tpope/vim-fugitive'

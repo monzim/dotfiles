@@ -152,9 +152,11 @@ alias gp='git push origin master'
 
 
 # ****My___Alias*****
+alias nv='nvim'
 alias plz='sudo'
 alias please='sudo'
 alias c='clear'
+alias wh='which'
 
 alias polyconfig='nvim ~/.config/polybar'
 alias bspwmconfig='nvim ~/.config/bspwm/bspwmrc'
@@ -259,7 +261,11 @@ connect-adb(){
 	adb tcpip 5555
 	adb connect 10.9.50.5:5555
 }
-
+connect-device(){
+	adb devices
+	adb tcpip $1
+	adb connect 10.9.50.5:$1
+}
 #*****Flutter****
 flpc(){
 	flutter clean
@@ -319,4 +325,24 @@ ram_cln(){
 # }
 
 
+stop_port(){
+    echo "Stopping all ports"
+    echo ">>Auth 9099"
+    lsof -ti tcp:9099 | xargs kill -9
+    echo ">>Database 9000"
+    lsof -ti tcp:9000 | xargs kill -9
+    echo ">>Firestore 8080"
+    lsof -ti tcp:8080 | xargs kill -9
+    echo ">>Storage 9199"
+    lsof -ti tcp:9199 | xargs kill -9
+    echo ">>Functions 5001"
+    lsof -ti tcp:5001 | xargs kill -9
+    echo ">>Hosting 5000"
+    lsof -ti tcp:5000 | xargs kill -9
+    echo ">>Pubsub 8085"
+    lsof -ti tcp:8085 | xargs kill -9
+}
 
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
