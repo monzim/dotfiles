@@ -175,26 +175,36 @@ alias gohub='cd /run/media/monzim/CodeX/Github'
 alias start_vm_service='systemctl start libvirtd.service; systemctl is-active libvirtd.service; sudo virsh net-start default; sudo virsh net-list --all'
 
 pac(){
-
 if [[ $2 == '-i' ]]; then
   echo "Installing $1 😊"
   sudo pacman -S $1
+  notify-send 'Pacman: ' "$1 installed  😊"
 elif [[ $2 == '-s' ]]; then
   yay -Ss $1 | grep $1
+  notify-send 'yay: ' "$1 installed  😊"
+
 
 elif [[ $2 == '-a' ]]; then
   echo "Install >>$1<< from aur 😀"
   yay -S $1
+  notify-send 'Package' "$1 installed  😀"
+
 
 elif [[ $2 == '-r' ]]; then
   echo "Removing 😔 $1"
   sudo pacman -R $1
+  notify-send 'Pacman: ' "$1 removed  😔"
+
+
 
 elif [[ $2 == '-rr' ]]; then
    yay -R $1
+    notify-send 'Package' "$1 removed  😔"
+
 
 else
   pacman -Ss $1 | grep $1
+
 
 fi
 
@@ -206,14 +216,14 @@ find_alias() {
 }
 
 # git_Related
-alias git-watch='gh run watch -i1 && notify-send "run is Done"'
+# alias git-watch='gh run watch -i1 && notify-send "run is Done"'
 # Git-New-Commit and Push
 git-new-commit() {    
 	git add .
 	git commit -m "$1"
 	git push -u
 	git log --oneline
-
+  notify-send 'New Commit Add and Pushed'
 }
 
 
@@ -221,6 +231,9 @@ git-new-commit() {
 adb-tv-29(){
 cd /var/lib/Android/Sdk/emulator
 ./emulator -avd Android_TV_720p_API_29 & disown
+notify-send 'Emulator' 'Android_TV_720p_API_29 is Running'
+exit
+
 
 }
 
@@ -234,24 +247,28 @@ cd /var/lib/Android/Sdk/emulator
 adb-tab-29() {
   cd /var/lib/Android/Sdk/emulator
   ./emulator -avd Pixel_C_API_29 & disown
+  notify-send 'Emulator' 'Pixel_C_API_29 is Running'
 	exit
 }
 
 adb-p5-29() {
   cd /var/lib/Android/Sdk/emulator
   ./emulator -avd Pixel_5_API_29 & disown
+  notify-send 'Emulator' 'Pixel_5_API_29 is Running'
 	exit
 }
 
 adb-p2-xl-29(){
   cd /var/lib/Android/Sdk/emulator
   ./emulator -avd Pixel_2_XL_API_29 & disown
+  notify-send 'Emulator' 'Pixel_2_XL_API_29 is Running'
   exit
 }
 
 launch() {
   cd /var/lib/Android/Sdk/emulator
   ./emulator -avd $1 & disown
+  notify-send 'Emulator' "$1 is Running"
   exit
 }
 
@@ -260,50 +277,82 @@ connect-adb(){
 	adb devices
 	adb tcpip 5555
 	adb connect 10.9.50.5:5555
+  notify-send 'Devices Connecting' 'Connected to 10.9.50.5555'
 }
 connect-device(){
 	adb devices
 	adb tcpip $1
 	adb connect 10.9.50.5:$1
+  notify-send 'Devices Connecting' 'Connected to 10.9.50.$1'
+
 }
 #*****Flutter****
 flpc(){
 	flutter clean
 	flutter pub get
+  notify-send  'Flutter Pub Clean and Get ' 'Done'
+
 }
 
 runc(){
-	flutter run -d chrome
+  notify-send 'Flutter Run' 'Chrome is Running'
+
+if [[ $1 == '-s' ]]; then
+   flutter run -d chrome --web-port $2
+elif [[ $1 == '-d' ]]; then
+      flutter run -d chrome --web-port 40501
+
+else
+ flutter run -d chrome
+
+fi
+
+  notify-send 'Flutter Run' 'Chrome is stopped!'
 }
 
+tcp_port(){
+  if [[ $1 == '-s' ]]; then
+   adb reverse tcp:$2 tcp:$2
+   else
+    adb reverse tcp:40501 tcp:40501
+    
+  fi
+  notify-send 'TCP Port reverse for ANDROID'
+}
 
-# FVM
-alias f="fvm flutter"
+# FVM alias f="fvm flutter"
 alias d="fvm dart"
 
 ffpc(){
 	fvm flutter clean
 	fvm flutter pub get
+  notify-send 'FVM Flutter Pub Clean and Get ' 'Done'
 }
 
 frunc(){
 	fvm flutter run -d chrome
+  notify-send 'FVM Flutter Run' 'Chrome is Running'
 }
 
 # GetX_CLI
 page-get(){
 	get create page:$1
+  notify-send 'GetX' "$1 "'Page Created'
 }
 
 view-get(){
 	get create view:$1 on $2
+  notify-send 'GetX'  "$1 "'View Created' on $2
 }
 
 ctl-get(){
 	get create controller:$1 on $2
+  notify-send 'GetX'  "$1 "'Controller Created' on $2
+
 }
 provider-get(){
 	get create provider:$1 on $2
+  notify-send 'GetX'  "$1 "'Provider Created' on $2
 }
 
 # Clean Ram
@@ -312,6 +361,8 @@ ram_cln(){
 	sudo sh -c 'echo 1 >  /proc/sys/vm/drop_caches'
 	sudo sh -c 'echo 2 >  /proc/sys/vm/drop_caches' 
 	free -h
+  notify-send 'Ram Clean' 'Cleaned'
+
 
 }
 
@@ -341,8 +392,26 @@ stop_port(){
     lsof -ti tcp:5000 | xargs kill -9
     echo ">>Pubsub 8085"
     lsof -ti tcp:8085 | xargs kill -9
+    notify-send 'All Ports' 'Stopped'
 }
 
+fpa(){
+ flutter pub add $1
+  notify-send 'Flutter Pub Add' "$1 "'Added'
+#  notify-send 'Added to project'
+}
+upMe(){
+  echo ">>Updating Full System"
+  sudo pacman -Syyu
+  notify-send "Pacman" "Full System Update Done"
+}
+
+ng_add_tailwind(){
+  npm install -D tailwindcss postcss autoprefixer
+  npx tailwindcss init
+  echo "https://tailwindcss.com/docs/guides/angular"
+
+}
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)

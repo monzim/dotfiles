@@ -36,8 +36,8 @@ window:
 
   ## Background opacity
   # opacity: .85 .62
-  opacity: .550
-
+  # opacity: .550
+  background_opacity: 0.5
 ## Cursor
 cursor:
   style:
