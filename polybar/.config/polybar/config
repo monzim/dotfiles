@@ -116,33 +116,33 @@ font-2 = "google\-mdi:size=12;3"
 font-3 = "Iosevka:style=bold:"size=10;3"
 
 
-[bar/top_center]
-inherit = bar/main
-width = 20%
-height = 15
-offset-y =2 
-offset-x = 680
-padding-right = 2
-border-size = 0
+; [bar/top_center]
+; inherit = bar/main
+; width = 20%
+; height = 15
+; offset-y =2 
+; offset-x = 680
+; padding-right = 2
+; border-size = 0
 
-font-0 = "Operator Mono:size=9;3"
-font-1 = "Iosevka Nerd Font:size=9;3"
-font-2 = "google\-mdi:size=10;3"
-font-3 = "IBM Plex Mono:style=bold:"size=6;3"
-separator = "  "
+; font-0 = "Operator Mono:size=9;3"
+; font-1 = "Iosevka Nerd Font:size=9;3"
+; font-2 = "google\-mdi:size=10;3"
+; font-3 = "IBM Plex Mono:style=bold:"size=6;3"
+; separator = "  "
 
-tray-position = right
-tray-detached = false
-tray-maxsize = 16
-tray-transparent = false
-tray-background = #00FFFFFF
-tray-foreground = ${color2.FOREGROUND}
-tray-offset-x = 0
-tray-offset-y = 0
-tray-padding = 0
-tray-scale = 1.0
-background = #00FFFFFF 
-modules-left = my_text
+; tray-position = right
+; tray-detached = false
+; tray-maxsize = 16
+; tray-transparent = false
+; tray-background = #00FFFFFF
+; tray-foreground = ${color2.FOREGROUND}
+; tray-offset-x = 0
+; tray-offset-y = 0
+; tray-padding = 0
+; tray-scale = 1.0
+; background = #00FFFFFF 
+; modules-left = my_text
 
 
 [bar/top_extra]
@@ -159,4 +159,4 @@ font-3 = "IBM Plex Mono:style=bold:"size=6;3"
 separator = "  "
 
 # background =#343944 
-modules-center= filesystem file_root  file_home  file_code  
+modules-center= filesystem file_root  file_home  file_code my_text

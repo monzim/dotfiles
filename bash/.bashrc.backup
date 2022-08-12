@@ -11,5 +11,3 @@ export CHROME_EXECUTABLE="/usr/bin/google-chrome-stable"
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 export GPG_TTY=$(tty)
-
-export PATH=$PATH:/home/monzim/bin

@@ -5,12 +5,14 @@
 export ZSH=$HOME/.oh-my-zsh
 
 # My Added Path
+export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:/var/lib/flutter/bin"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 export CHROME_EXECUTABLE="/usr/bin/google-chrome-stable"
 export PATH="$PATH:/var/lib/android-studio/bin"
 export ANDROID_HOME=/var/lib/Android/Sdk/
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
 
 # export PATH="$PATH:/var/lib/Android/Sdk/emulator"
 
@@ -152,6 +154,7 @@ alias gp='git push origin master'
 
 
 # ****My___Alias*****
+alias doc='docker'
 alias nv='nvim'
 alias plz='sudo'
 alias please='sudo'
@@ -193,12 +196,14 @@ elif [[ $2 == '-a' ]]; then
 elif [[ $2 == '-r' ]]; then
   echo "Removing 😔 $1"
   sudo pacman -R $1
+  sudo pacman -Rsn $(pacman -Qdtq)
   notify-send 'Pacman: ' "$1 removed  😔"
 
 
 
 elif [[ $2 == '-rr' ]]; then
    yay -R $1
+   sudo pacman -Rsn $(pacman -Qdtq)
     notify-send 'Package' "$1 removed  😔"
 
 
@@ -276,7 +281,7 @@ launch() {
 connect-adb(){
 	adb devices
 	adb tcpip 5555
-	adb connect 10.9.50.5:5555
+	adb connect 10.9.50.3:5555
   notify-send 'Devices Connecting' 'Connected to 10.9.50.5555'
 }
 connect-device(){
@@ -367,13 +372,12 @@ ram_cln(){
 }
 
 # Start Virtual Machine and Network
-# start_vm_service(){
-#   systemctl start libvirtd.start_vm_service
-#   # systemctl is-active libvirtd.service
-#   # sudo virsh net-start default
-#   # sudo virsh net-list --all
-# 
-# }
+start_vm_engine(){
+  systemctl start libvirtd.service
+  systemctl is-active libvirtd.service
+  sudo virsh net-start default
+  sudo virsh net-list --all
+}
 
 
 stop_port(){
@@ -400,6 +404,7 @@ fpa(){
   notify-send 'Flutter Pub Add' "$1 "'Added'
 #  notify-send 'Added to project'
 }
+
 upMe(){
   echo ">>Updating Full System"
   sudo pacman -Syyu
