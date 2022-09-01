@@ -420,3 +420,4 @@ ng_add_tailwind(){
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
