@@ -1,26 +1,41 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib/pkgconfig
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+
 
 # My Added Path
-export PATH="$PATH:/usr/local/go/bin"
-export PATH="$PATH:/var/lib/flutter/bin"
+export PATH="$PATH:/home/monzim/Application/Development/flutter/bin"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 export CHROME_EXECUTABLE="/usr/bin/google-chrome-stable"
-export PATH="$PATH:/var/lib/android-studio/bin"
-export ANDROID_HOME=/var/lib/Android/Sdk/
+export ANDROID_HOME=/home/monzim/Application/Development/Android/Sdk/
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export PATH="$PATH":"$HOME/Application/Development/flutter/.pub-cache/bin"
+export PATH=$PATH:/home/monzim/Application/Development/go/bin
+
+# export PATH="$PATH":"$HOME/Application/Development/go/bin"
 
 
 # export PATH="$PATH:/var/lib/Android/Sdk/emulator"
+
+
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship"
+# ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME="spaceship"
@@ -83,9 +98,9 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions autojump sudo zsh-syntax-highlighting web-search copydir copyfile copybuffer )
+plugins=(git zsh-autosuggestions sudo zsh-syntax-highlighting web-search copypath copyfile copybuffer )
 
-source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
+source /home/monzim/.oh-my-zsh/plugins/
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -142,6 +157,7 @@ alias la='ls -A'
 alias lm='ls -m'
 alias lr='ls -R'
 alias lg='ls -l --group-directories-first'
+alias vs='code .'
 
 # git
 alias gcl='git clone --depth 1'
@@ -154,6 +170,13 @@ alias gp='git push origin master'
 
 
 # ****My___Alias*****
+alias appw='appwrite'
+alias awf='appwrite functions'
+
+alias dc='docker-compose'
+alias dockerUp='docker-compose up'
+alias dockerDown='docker-compose down'
+alias dockerUpBg='docker-compose up -d'
 alias doc='docker'
 alias nv='nvim'
 alias plz='sudo'
@@ -169,11 +192,11 @@ alias nvimconfig='nvim /home/monzim/.config/nvim'
 alias dotconfig='nvim /run/media/monzim/CodeX/Dotfiles'
 alias alasrconfig='nvim /run/media/monzim/CodeX/NVIM/Al-‘Asr_vim'
 
-alias gocode='cd /run/media/monzim/CodeX/'
-alias dotfiles='cd /run/media/monzim/CodeX/Dotfiles'
-alias goang='cd /run/media/monzim/CodeX/Angular'
-alias goflt='cd /run/media/monzim/CodeX/Flutter'
-alias gohub='cd /run/media/monzim/CodeX/Github'
+alias gocode='cd /home/monzim/CodeX'
+alias dotfiles='cd //home/monzim/Dotfiles/'
+alias goang='cd /home/monzim/CodeX/Angular'
+alias goflt='cd /home/monzim/CodeX/Flutter'
+alias gohub='cd /home/monzim/CodeX/Github'
 
 alias start_vm_service='systemctl start libvirtd.service; systemctl is-active libvirtd.service; sudo virsh net-start default; sudo virsh net-list --all'
 
@@ -250,23 +273,23 @@ exit
 # }
 
 adb-tab-29() {
-  cd /var/lib/Android/Sdk/emulator
+  cd /home/monzim/Application/Development/Android/Sdk/emulator
   ./emulator -avd Pixel_C_API_29 & disown
   notify-send 'Emulator' 'Pixel_C_API_29 is Running'
 	exit
 }
 
 adb-p5-29() {
-  cd /var/lib/Android/Sdk/emulator
+  cd /home/monzim/Application/Development/Android/Sdk/emulator
   ./emulator -avd Pixel_5_API_29 & disown
   notify-send 'Emulator' 'Pixel_5_API_29 is Running'
 	exit
 }
 
-adb-p2-xl-29(){
+adb-p6(){
   cd /var/lib/Android/Sdk/emulator
-  ./emulator -avd Pixel_2_XL_API_29 & disown
-  notify-send 'Emulator' 'Pixel_2_XL_API_29 is Running'
+  ./emulator -avd Pixel_6_Pro_API_33 & disown
+  notify-send 'Emulator' 'Pixel_6_Pro_API_33 is Running'
   exit
 }
 
@@ -281,8 +304,8 @@ launch() {
 connect-adb(){
 	adb devices
 	adb tcpip 5555
-	adb connect 10.9.50.3:5555
-  notify-send 'Devices Connecting' 'Connected to 10.9.50.5555'
+	adb connect 10.9.50.5:5555
+  notify-send 'Devices Connecting' 'Connected to 10.9.50.5:5555'
 }
 connect-device(){
 	adb devices
@@ -405,10 +428,17 @@ fpa(){
 #  notify-send 'Added to project'
 }
 
-upMe(){
+updateMe(){
   echo ">>Updating Full System"
   sudo pacman -Syyu
+  yay
+  brew update
+  brew upgrade
   notify-send "Pacman" "Full System Update Done"
+}
+
+rf(){
+ rm -rf $1
 }
 
 ng_add_tailwind(){
@@ -418,6 +448,40 @@ ng_add_tailwind(){
 
 }
 
-# Load Angular CLI autocompletion.
-source <(ng completion script)
+git_fetch_r_all(){
+  git branch -r | grep -v '\->' | sed "s,\x1B\[[0-9;]*[a-zA-Z],,g" | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
+  git fetch --all
+  git pull --all
+}
+
+
+#appwrite functions createDeployment --functionId $uuid --entrypoint lib/main.dart --code functions/$1 --activate true
+	
+awDartfunc(){
+  uuid=$(uuidgen)
+  uuid_short=${uuid:0:12}
+  appwrite functions create --functionId $uuid_short --name $1 --runtime dart-2.17 --execute team:server
+  appwrite functions createVariable --functionId $uuid_short --key HOST_NAME --value http://10.9.50.2/v1
+  appwrite functions createVariable --functionId $uuid_short --key SECRET_KEY --value add_the_key_here
+  appwrite functions createVariable --functionId $uuid_short --key PROJECT_ID --value add_project_id_here
+
+  # Generate the Mason file using the shortened UUID
+  mason make appwrite --name $1 --id $uuid_short -o functions
+  echo
+  echo "$1 Appwrite function Added"
+}
+
+
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+## [Completion] 
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/monzim/.dart-cli-completion/zsh-config.zsh ]] && . /home/monzim/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
