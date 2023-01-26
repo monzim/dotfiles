@@ -304,8 +304,8 @@ launch() {
 connect-adb(){
 	adb devices
 	adb tcpip 5555
-	adb connect 10.9.50.5:5555
-  notify-send 'Devices Connecting' 'Connected to 10.9.50.5:5555'
+	adb connect 10.9.50.3:5555
+  notify-send 'Devices Connecting' 'Connected to 10.9.50.3:5555'
 }
 connect-device(){
 	adb devices
