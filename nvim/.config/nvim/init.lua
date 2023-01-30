@@ -1,0 +1,2 @@
+require('monzim')
+print("Hello")
