@@ -4,7 +4,8 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Flutter
-export PATH="$PATH:/Users/monzim/Developer/flutter/bin"
+export PATH="$PATH":"$HOME/Developer/flutter/bin"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
