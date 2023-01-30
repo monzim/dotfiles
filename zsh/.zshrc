@@ -2,4 +2,4 @@
 ZSH_DIR="$HOME/.zsh_me"
 # Load Starship
 eval "$(starship init zsh)"
-# source $ZSH_DIR/ohmyzsh/ohmysh.sh
+# source $ZSH_DIR/ohmyzsh/ohmysh.shexport GPG_TTY=$(tty)
