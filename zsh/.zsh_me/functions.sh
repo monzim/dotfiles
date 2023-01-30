@@ -1,4 +1,7 @@
 # Functions go here
-function gac() {
-  git add . && git commit -m "$1"
+
+# Flutter
+flpc(){
+	flutter clean
+	flutter pub get
 }
