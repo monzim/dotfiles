@@ -1,2 +1,1 @@
 require('monzim')
-print("Hello")
