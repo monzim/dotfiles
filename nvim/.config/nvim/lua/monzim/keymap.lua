@@ -58,7 +58,7 @@ keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 --IndentLine
-keymap("n", "<leader>i", ":IndentLinesToggle<CR>", opts)
+keymap("n", "<leader>i", "::IndentBlanklineToggle<CR>", opts)
 
 --Create New TAb
 keymap("n", "<leader>n", ":tabnew<cr>", opts)
@@ -68,7 +68,7 @@ keymap("n", "<leader>c", ":tabclose<cr>", opts)
 keymap("n", "<leader>v", ":vsplit<cr>", opts)
 keymap("n", "<leader>h", ":split<cr>", opts)
 
-
--- nnoremap <leader>cr :w<CR>:!gcc % -o %< && ./%<CR>
+-- For C code
 keymap("n", "<leader>cr", ":w<CR>:!gcc % -o %< <CR>", opts)
--- write a keymap that will compile c code 
+-- nnoremap <leader>cr :w<CR>:!gcc % -o %< && ./%<CR>
+

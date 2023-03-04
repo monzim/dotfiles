@@ -1,4 +1,4 @@
---require('feline').setup()
+-- require('feline').setup()
 local lsp = require("feline.providers.lsp")
 local vi_mode_utils = require("feline.providers.vi_mode")
 local gps = require("nvim-gps")
@@ -6,12 +6,12 @@ local gps = require("nvim-gps")
 local force_inactive = {
     filetypes = {},
     buftypes = {},
-    bufnames = {},
+    bufnames = {}
 }
 
 local components = {
-    active = { {}, {}, {} },
-    inactive = { {}, {}, {} },
+    active = {{}, {}, {}},
+    inactive = {{}, {}, {}}
 }
 
 local colors = {
@@ -28,7 +28,7 @@ local colors = {
     fg = "#a89984",
     skyblue = "#3CAFE8",
     red = "#ea6962",
-    command = "#95EC23",
+    command = "#95EC23"
 }
 
 local vi_mode_colors = {
@@ -46,7 +46,7 @@ local vi_mode_colors = {
     COMMAND = "command",
     SHELL = "green",
     TERM = "green",
-    NONE = "yellow",
+    NONE = "yellow"
 }
 
 local vi_mode_text = {
@@ -64,7 +64,7 @@ local vi_mode_text = {
     COMMAND = "<|",
     SHELL = "<|",
     TERM = "<|",
-    NONE = "<>",
+    NONE = "<>"
 }
 
 local vi_mode_text_string = {
@@ -82,21 +82,12 @@ local vi_mode_text_string = {
     COMMAND = " COMMAND ",
     SHELL = " SHELL ",
     TERM = " TERM ",
-    NONE = " NONE ",
+    NONE = " NONE "
 }
 
-force_inactive.filetypes = {
-    "NvimTree",
-    "dbui",
-    "packer",
-    "startify",
-    "fugitive",
-    "fugitiveblame",
-}
+force_inactive.filetypes = {"NvimTree", "dbui", "packer", "startify", "fugitive", "fugitiveblame"}
 
-force_inactive.buftypes = {
-    "terminal",
-}
+force_inactive.buftypes = {"terminal"}
 
 -- LEFT
 
@@ -115,7 +106,7 @@ components.active[1][1] = {
 
         return val
     end,
-    right_sep = " ",
+    right_sep = " "
 }
 -- vi-symbol
 components.active[1][2] = {
@@ -129,7 +120,7 @@ components.active[1][2] = {
         val.style = "bold"
         return val
     end,
-    right_sep = " ",
+    right_sep = " "
 }
 -- filename
 components.active[1][3] = {
@@ -139,16 +130,16 @@ components.active[1][3] = {
     hl = {
         fg = "white",
         bg = "bg",
-        style = "bold",
+        style = "bold"
     },
     right_sep = {
         str = " > ",
         hl = {
             fg = "white",
             bg = "bg",
-            style = "bold",
-        },
-    },
+            style = "bold"
+        }
+    }
 }
 
 -- fileSize
@@ -160,9 +151,9 @@ components.active[1][4] = {
     hl = {
         fg = "skyblue",
         bg = "bg",
-        style = "bold",
+        style = "bold"
     },
-    right_sep = " ",
+    right_sep = " "
 }
 -- nvimGps
 components.active[1][5] = {
@@ -175,8 +166,8 @@ components.active[1][5] = {
     hl = {
         fg = "white",
         bg = "bg",
-        style = "bold",
-    },
+        style = "bold"
+    }
 }
 
 -- diagnosticErrors
@@ -187,8 +178,8 @@ components.active[1][6] = {
     end,
     hl = {
         fg = "red",
-        style = "bold",
-    },
+        style = "bold"
+    }
 }
 -- diagnosticWarn
 components.active[1][7] = {
@@ -198,8 +189,8 @@ components.active[1][7] = {
     end,
     hl = {
         fg = "yellow",
-        style = "bold",
-    },
+        style = "bold"
+    }
 }
 -- diagnosticHint
 components.active[1][8] = {
@@ -209,8 +200,8 @@ components.active[1][8] = {
     end,
     hl = {
         fg = "cyan",
-        style = "bold",
-    },
+        style = "bold"
+    }
 }
 -- diagnosticInfo
 components.active[1][9] = {
@@ -220,8 +211,8 @@ components.active[1][9] = {
     end,
     hl = {
         fg = "skyblue",
-        style = "bold",
-    },
+        style = "bold"
+    }
 }
 -- MID
 
@@ -231,8 +222,8 @@ components.active[2][1] = {
     hl = {
         fg = "yellow",
         bg = "bg",
-        style = "bold",
-    },
+        style = "bold"
+    }
 }
 -- diffAdd
 components.active[2][2] = {
@@ -240,8 +231,8 @@ components.active[2][2] = {
     hl = {
         fg = "green",
         bg = "bg",
-        style = "bold",
-    },
+        style = "bold"
+    }
 }
 -- diffModfified
 components.active[2][3] = {
@@ -249,8 +240,8 @@ components.active[2][3] = {
     hl = {
         fg = "orange",
         bg = "bg",
-        style = "bold",
-    },
+        style = "bold"
+    }
 }
 -- diffRemove
 components.active[2][4] = {
@@ -258,13 +249,11 @@ components.active[2][4] = {
     hl = {
         fg = "red",
         bg = "bg",
-        style = "bold",
-    },
+        style = "bold"
+    }
 }
 
-
 -- RIGHT
-
 
 -- LspName
 components.active[3][1] = {
@@ -272,9 +261,9 @@ components.active[3][1] = {
     hl = {
         fg = "yellow",
         bg = "bg",
-        style = "bold",
+        style = "bold"
     },
-    right_sep = " ",
+    right_sep = " "
 }
 
 -- fileIcon
@@ -302,7 +291,7 @@ components.active[3][2] = {
         val.style = "bold"
         return val
     end,
-    right_sep = " ",
+    right_sep = " "
 }
 -- fileType
 components.active[3][3] = {
@@ -321,36 +310,47 @@ components.active[3][3] = {
         val.style = "bold"
         return val
     end,
-    right_sep = " ",
+    right_sep = " "
+}
+
+-- fileEncode
+components.active[3][4] = {
+    provider = "file_encoding",
+    hl = {
+        fg = "white",
+        bg = "bg",
+        style = "bold"
+    },
+    right_sep = " "
 }
 
 -- lineInfo
-components.active[3][4] = {
+components.active[3][5] = {
     provider = "position",
     hl = {
         fg = "white",
         bg = "bg",
-        style = "bold",
+        style = "bold"
     },
-    right_sep = " ",
+    right_sep = " "
 }
 -- linePercent
 -- components.active[3][6] = {
--- 	provider = "line_percentage",
--- 	hl = {
--- 		fg = "white",
--- 		bg = "bg",
--- 		style = "bold",
--- 	},
--- 	right_sep = " ",
+--     provider = "line_percentage",
+--     hl = {
+--         fg = "white",
+--         bg = "bg",
+--         style = "bold"
+--     },
+--     right_sep = " "
 -- }
 -- scrollBar
-components.active[3][5] = {
+components.active[3][6] = {
     provider = "scroll_bar",
     hl = {
         fg = "yellow",
-        bg = "bg",
-    },
+        bg = "bg"
+    }
 }
 -- fileFormat
 -- components.active[3][5] = {
@@ -364,16 +364,7 @@ components.active[3][5] = {
 -- 	},
 -- 	right_sep = " ",
 -- }
--- fileEncode
--- components.active[3][6] = {
--- 	provider = "file_encoding",
--- 	hl = {
--- 		fg = "white",
--- 		bg = "bg",
--- 		style = "bold",
--- 	},
--- 	right_sep = " ",
--- }
+
 -- RVMrubyVersion
 -- components.active[3][7] = {
 --   provider = function()
@@ -394,30 +385,27 @@ components.inactive[1][1] = {
     hl = {
         fg = "black",
         bg = "cyan",
-        style = "bold",
+        style = "bold"
     },
     left_sep = {
         str = " ",
         hl = {
             fg = "NONE",
-            bg = "cyan",
-        },
+            bg = "cyan"
+        }
     },
-    right_sep = {
-        {
-            str = " ",
-            hl = {
-                fg = "NONE",
-                bg = "cyan",
-            },
-        },
-        " ",
-    },
+    right_sep = {{
+        str = " ",
+        hl = {
+            fg = "NONE",
+            bg = "cyan"
+        }
+    }, " "}
 }
 
 require("feline").setup({
     theme = colors,
     vi_mode_colors = vi_mode_colors,
     components = components,
-    force_inactive = force_inactive,
+    force_inactive = force_inactive
 })
