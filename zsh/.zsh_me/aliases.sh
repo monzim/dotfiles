@@ -1,4 +1,5 @@
 # Aliases go here
+alias zshconfig="mate ~/.zshrc"
 
 # General
 # ls
