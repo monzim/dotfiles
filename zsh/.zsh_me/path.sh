@@ -1,7 +1,20 @@
 # Paths go here
+export PATH=/Users/monzim/.local/bin:$PATH
 
+# Java Path
+export JAVA_HOME=/opt/homebrew/opt/openjdk
+export PATH=$JAVA_HOME/bin:$PATH
 # Set PATH, MANPATH, etc., for Homebrew.
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# GO
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
+
+# OpenJDK
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+# For compilers to find openjdk you may need to set:
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
 
 # Flutter
 export PATH="$PATH":"$HOME/Development/flutter/bin"
