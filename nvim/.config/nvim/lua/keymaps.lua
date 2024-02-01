@@ -107,3 +107,9 @@ vim.keymap.set("n", "n", "nzzzv")
 
 -- Set keymap for "N" in normal mode to move to the previous search result and visually select it
 vim.keymap.set("n", "N", "Nzzzv")
+
+-- set a custom keymap to toggle the tree leader + b
+vim.keymap.set('n', '<Leader>b', ':Neotree toggle<CR>', {
+    noremap = true,
+    silent = true
+})
