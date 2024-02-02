@@ -10,6 +10,9 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
+-- set scroll of to 10 lines
+vim.opt.scrolloff = 10
+
 -- For All Serach Match Hight Light
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
@@ -50,9 +53,9 @@ vim.o.termguicolors = true
 
 -- vim: ts=2 sts=2 sw=2 et
 
--- transparent background
-vim.cmd([[ hi Normal guibg=NONE ctermbg=NONE ]])
-vim.cmd([[ hi NonText guibg=NONE ctermbg=NONE ]])
-vim.cmd([[ hi Normal ctermbg=NONE ]])
-vim.cmd([[ hi NonText ctermbg=NONE ]])
-vim.o.winblend = 15
+-- -- transparent background
+-- vim.cmd([[ hi Normal guibg=NONE ctermbg=NONE ]])
+-- vim.cmd([[ hi NonText guibg=NONE ctermbg=NONE ]])
+-- vim.cmd([[ hi Normal ctermbg=NONE ]])
+-- vim.cmd([[ hi NonText ctermbg=NONE ]])
+-- vim.o.winblend = 15

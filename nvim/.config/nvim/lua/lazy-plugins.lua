@@ -154,38 +154,6 @@ require('lazy').setup({ -- NOTE: First, some plugins that don't require any conf
         end
     }
 }, {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    lazy = false,
-    config = function()
-        require('onedark').setup {
-            theme = function()
-                if vim.o.background == "dark" then
-                    return "onedark"
-                else
-                    return "onelight"
-                end
-            end,
-
-            colors = {
-                onedark = {
-                    -- bg = "#0D1117",
-                    bg = "#",
-                    -- bg = "#222831",
-                    -- bg = "#1B262C",
-                    -- bg = "#101011",
-                    -- bg = "#171C27",
-                    -- bg = "#1D1F2D",
-                    -- bg = "#202838",
-                    purple = "#BA68C8"
-                }
-            }
-
-        }
-        require('onedark').load()
-    end
-}, {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
@@ -229,7 +197,12 @@ require('lazy').setup({ -- NOTE: First, some plugins that don't require any conf
     'nvim-treesitter/nvim-treesitter',
     dependencies = {'nvim-treesitter/nvim-treesitter-textobjects'},
     build = ':TSUpdate'
-}, -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
+}, -- {
+--     "ThePrimeagen/harpoon",
+--     branch = "harpoon2",
+--     dependencies = {"nvim-lua/plenary.nvim"}
+-- }
+-- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
 --       These are some example plugins that I've included in the kickstart repository.
 --       Uncomment any of the lines below to enable them.
 -- require 'kickstart.plugins.autoformat',
@@ -241,6 +214,8 @@ require('lazy').setup({ -- NOTE: First, some plugins that don't require any conf
 --
 --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
 {
+    import = 'custom.themes'
+}, {
     import = 'custom.plugins' -- Add your plugins to `lua/custom/plugins/*.lua`
 
 }, {
