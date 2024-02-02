@@ -160,8 +160,28 @@ require('lazy').setup({ -- NOTE: First, some plugins that don't require any conf
     lazy = false,
     config = function()
         require('onedark').setup {
-            -- Set a style preset. 'dark' is default.
-            style = 'dark' -- dark, darker, cool, deep, warm, warmer, light
+            theme = function()
+                if vim.o.background == "dark" then
+                    return "onedark"
+                else
+                    return "onelight"
+                end
+            end,
+
+            colors = {
+                onedark = {
+                    -- bg = "#0D1117",
+                    bg = "#",
+                    -- bg = "#222831",
+                    -- bg = "#1B262C",
+                    -- bg = "#101011",
+                    -- bg = "#171C27",
+                    -- bg = "#1D1F2D",
+                    -- bg = "#202838",
+                    purple = "#BA68C8"
+                }
+            }
+
         }
         require('onedark').load()
     end

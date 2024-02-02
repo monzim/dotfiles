@@ -4,7 +4,7 @@
 -- Set highlight on search
 vim.o.hlsearch = false
 
-vim.opt.relativenumber= true
+vim.opt.relativenumber = true
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -49,3 +49,10 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 
 -- vim: ts=2 sts=2 sw=2 et
+
+-- transparent background
+vim.cmd([[ hi Normal guibg=NONE ctermbg=NONE ]])
+vim.cmd([[ hi NonText guibg=NONE ctermbg=NONE ]])
+vim.cmd([[ hi Normal ctermbg=NONE ]])
+vim.cmd([[ hi NonText ctermbg=NONE ]])
+vim.o.winblend = 15
