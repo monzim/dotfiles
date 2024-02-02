@@ -241,7 +241,10 @@ require('lazy').setup({ -- NOTE: First, some plugins that don't require any conf
 --
 --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
 {
-    import = 'custom.plugins'
+    import = 'custom.plugins' -- Add your plugins to `lua/custom/plugins/*.lua`
+
+}, {
+    import = 'custom.lang' -- Add your language specific plugins to `lua/custom/lang/*.lua`
 }}, {})
 
 -- vim: ts=2 sts=2 sw=2 et
