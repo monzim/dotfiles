@@ -11,6 +11,15 @@ function ColorMyPencils(color)
 
 end
 
+local function toggle_transparency()
+    local onedark = require('onedark')
+    onedark.setup({
+        transparent = not onedark.config.transparent
+    })
+    onedark.load()
+    ColorMyPencils()
+end
+
 return {
 
     --     {

@@ -3,7 +3,9 @@ return {
     priority = 1000,
     lazy = false,
     config = function()
-        require('onedark').setup {
+        local onedark = require('onedark')
+
+        onedark.setup({
             theme = function()
                 if vim.o.background == "dark" then
                     return "onedark"
@@ -16,8 +18,8 @@ return {
                 keywords = "bold",
                 functions = "italic,bold"
             },
-            sidebars = "transparent", -- style for sidebars, see below
-            floats = "transparent", -- style for floating windows
+            -- sidebars = "transparent", -- style for sidebars, see below
+            -- floats = "transparent", -- style for floating windows
             colors = {
                 onedark = {
                     bg = "#",
@@ -57,8 +59,9 @@ return {
                 undercurl = true, -- use undercurl instead of underline for diagnostics
                 background = true -- use background color for virtual text
             }
-        }
-        require('onedark').load()
+        })
+
+        onedark.load()
         ColorMyPencils()
     end
 }

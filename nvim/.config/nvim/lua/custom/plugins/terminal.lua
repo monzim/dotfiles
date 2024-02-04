@@ -17,10 +17,30 @@ return {
                 -- like `size`, width, height, row, and col can be a number or function which is passed the current terminal
                 winblend = 3,
                 title_pos = 'center' -- 'left' | 'center' | 'right', position of the title of the floating window
+            },
+            persist_size = true,
+            persist_mode = true,
+            shading_factor = 3,
+            hide_numbers = false,
+            start_in_insert = true,
+            insert_mappings = true,
+            auto_scroll = true,
+            winbar = {
+                enabled = true
             }
+
         }
 
         local Terminal = require('toggleterm.terminal').Terminal
+
+        local newterm = Terminal:new({
+            hidden = false
+        })
+
+        function _newterm_toggle()
+            newterm:toggle()
+        end
+
         local lazygit = Terminal:new({
             cmd = "lazygit",
             hidden = true
@@ -39,14 +59,15 @@ return {
             lazydocker:toggle()
         end
 
-        vim.api.nvim_set_keymap("v", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {
-            noremap = true,
-            silent = true
-        })
-
-        vim.api.nvim_set_keymap("v", "<leader>dd", "<cmd>lua _lazydocker_toggle()<CR>", {
-            noremap = true,
-            silent = true
+        require('which-key').register({
+            ['<leader>t'] = {
+                name = 'Terminal',
+                t = {"<cmd>lua _newterm_toggle()<CR>", "Toggle Terminal"},
+                g = {"<cmd>lua _lazygit_toggle()<CR>", "Lazygit"},
+                d = {"<cmd>lua _lazydocker_toggle()<CR>", "Lazydocker"}
+            }
+        }, {
+            mode = 'n'
         })
 
     end
