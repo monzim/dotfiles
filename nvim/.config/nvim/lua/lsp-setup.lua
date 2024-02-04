@@ -109,7 +109,9 @@ require('mason-lspconfig').setup()
 --  define the property 'filetypes' to the map in question.
 local servers = {
     -- clangd = {},
+
     gopls = {
+        filetypes = {'go', 'gomod'},
         completeUnimported = true, -- include unimported packages in completion
         usePlaceholders = true, -- add parameter placeholders when completing a function
         staticcheck = true, -- enable staticcheck linter
@@ -120,8 +122,14 @@ local servers = {
     },
 
     -- pyright = {},
-    -- rust_analyzer = {},
-    -- tsserver = {},
+    rust_analyzer = {
+        filetypes = {'rust'}
+
+    },
+    tsserver = {
+        filetypes = {'javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescriptreact',
+                     'typescript.tsx'}
+    },
     -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
     lua_ls = {

@@ -216,6 +216,11 @@ require('lazy').setup({ -- NOTE: First, some plugins that don't require any conf
 {
     import = 'custom.themes'
 }, {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = {"nvim-lua/plenary.nvim"}
+
+}, {
     import = 'custom.plugins' -- Add your plugins to `lua/custom/plugins/*.lua`
 
 }, {

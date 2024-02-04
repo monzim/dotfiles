@@ -19,6 +19,36 @@ return {
                 title_pos = 'center' -- 'left' | 'center' | 'right', position of the title of the floating window
             }
         }
+
+        local Terminal = require('toggleterm.terminal').Terminal
+        local lazygit = Terminal:new({
+            cmd = "lazygit",
+            hidden = true
+        })
+
+        function _lazygit_toggle()
+            lazygit:toggle()
+        end
+
+        local lazydocker = Terminal:new({
+            cmd = "lazydocker",
+            hidden = true
+        })
+
+        function _lazydocker_toggle()
+            lazydocker:toggle()
+        end
+
+        vim.api.nvim_set_keymap("v", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {
+            noremap = true,
+            silent = true
+        })
+
+        vim.api.nvim_set_keymap("v", "<leader>dd", "<cmd>lua _lazydocker_toggle()<CR>", {
+            noremap = true,
+            silent = true
+        })
+
     end
 }
 
