@@ -218,6 +218,11 @@ require('lazy').setup({ -- NOTE: First, some plugins that don't require any conf
         extensions = {}
     }
 }, {
+    "zbirenbaum/copilot-cmp",
+    config = function()
+        require("copilot_cmp").setup()
+    end
+}, {
     -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`

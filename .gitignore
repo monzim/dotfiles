@@ -5,3 +5,4 @@ nvim/.config/nvim/plugin/packer_compiled.lua
 # ignore all .DS_Store files in this project
 **/.DS_Store
 zsh/.zsh_me/key_exports.sh
+nvim/.config/nvim/lazy-lock.json
