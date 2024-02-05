@@ -4,6 +4,7 @@
 --     opt = true,
 --     cmd = {"Copilot"}
 -- }
+-- lspkind.lua
 return {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",

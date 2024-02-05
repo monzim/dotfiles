@@ -2,10 +2,21 @@
 -- See `:help cmp`
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
+local lspkind = require("lspkind")
 require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
 
 cmp.setup {
+    -- this is for the zbirenbaum/copilot with the zbirenbaum/copilot-cmp plugin
+    formatting = {
+        format = lspkind.cmp_format({
+            mode = "symbol",
+            max_width = 50,
+            symbol_map = {
+                Copilot = ""
+            }
+        })
+    },
     snippet = {
         expand = function(args)
             luasnip.lsp_expand(args.body)
