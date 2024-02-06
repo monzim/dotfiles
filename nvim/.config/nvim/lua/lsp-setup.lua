@@ -111,13 +111,47 @@ local servers = {
     -- clangd = {},
 
     gopls = {
-        filetypes = {'go', 'gomod'},
-        completeUnimported = true, -- include unimported packages in completion
-        usePlaceholders = true, -- add parameter placeholders when completing a function
-        staticcheck = true, -- enable staticcheck linter
-        matcher = "fuzzy", -- use fuzzy matching for completion
-        analysis = {
-            unusedparams = true -- report unused params
+        keys = { -- Workaround for the lack of a DAP strategy in neotest-go: https://github.com/nvim-neotest/neotest-go/issues/12
+        {
+            "<leader>td",
+            "<cmd>lua require('dap-go').debug_test()<CR>",
+            desc = "Debug Nearest (Go)"
+        }},
+        settings = {
+            gopls = {
+                gofumpt = true,
+                codelenses = {
+                    gc_details = false,
+                    generate = true,
+                    regenerate_cgo = true,
+                    run_govulncheck = true,
+                    test = true,
+                    tidy = true,
+                    upgrade_dependency = true,
+                    vendor = true
+                },
+                hints = {
+                    assignVariableTypes = true,
+                    compositeLiteralFields = true,
+                    compositeLiteralTypes = true,
+                    constantValues = true,
+                    functionTypeParameters = true,
+                    parameterNames = true,
+                    rangeVariableTypes = true
+                },
+                analyses = {
+                    fieldalignment = true,
+                    nilness = true,
+                    unusedparams = true,
+                    unusedwrite = true,
+                    useany = true
+                },
+                usePlaceholders = true,
+                completeUnimported = true,
+                staticcheck = true,
+                directoryFilters = {"-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules"},
+                semanticTokens = true
+            }
         }
     },
 
@@ -131,6 +165,16 @@ local servers = {
                      'typescript.tsx'}
     },
     -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+    dockerls = {},
+    docker_compose_language_service = {},
+    tailwindcss = {
+        -- exclude a filetype from the default_config
+        filetypes_exclude = {"markdown"},
+        -- add additional filetypes to the default_config
+        filetypes_include = {}
+        -- to fully override the default_config, change the below
+        -- filetypes = {}
+    },
 
     lua_ls = {
         Lua = {
@@ -167,6 +211,5 @@ mason_lspconfig.setup_handlers {function(server_name)
         settings = servers[server_name],
         filetypes = (servers[server_name] or {}).filetypes
     }
-end}
 
--- vim: ts=2 sts=2 sw=2 et
+end}

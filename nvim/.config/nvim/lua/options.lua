@@ -41,6 +41,11 @@ vim.o.smartcase = true
 -- Keep signcolumn on by default
 vim.wo.signcolumn = 'yes'
 
+-- set line wrap
+vim.wo.wrap = true
+-- set max line width
+vim.wo.colorcolumn = '120'
+
 -- Decrease update time
 vim.o.updatetime = 250
 vim.o.timeoutlen = 300
