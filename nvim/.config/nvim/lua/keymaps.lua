@@ -53,6 +53,26 @@ local opts = {
     silent = true
 } -- Define options for keymaps
 
+-- set keymap to navigate between buffers to tab in normal
+vim.keymap.set('n', '<TAB>', ':bnext<CR>', {
+    noremap = true,
+    silent = true,
+    desc = 'Go to next buffer'
+})
+
+vim.keymap.set('n', '<S-TAB>', ':bprevious<CR>', {
+    noremap = true,
+    silent = true,
+    desc = 'Go to previous buffer'
+})
+
+-- set keymap that will format the code then save the file
+vim.keymap.set('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', {
+    noremap = true,
+    silent = true,
+    desc = 'Format the code'
+})
+
 -- Insert mode
 -- Keymap for inserting "<ESC>" when "jk" is typed in insert mode
 vim.keymap.set("i", "jk", "<ESC>", opts)
@@ -60,8 +80,6 @@ vim.keymap.set("i", "jk", "<ESC>", opts)
 -- Normal mode
 vim.keymap.set("n", ";", ":", opts)
 vim.keymap.set("n", "<leader>w", ":up<CR>", opts)
-vim.keymap.set("n", "<leader>g", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
-vim.keymap.set("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
 
 vim.keymap.set("n", "<leader>q", ":q<CR>", opts)
 vim.keymap.set("n", "<leader>Q", ":q!<CR>", opts)
