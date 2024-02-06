@@ -1,7 +1,15 @@
 -- Unless you are still migrating, remove the deprecated commands from v1.x
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
-return {
+return ({{
+    's1n7ax/nvim-window-picker', -- optinal for window-picker
+    name = 'window-picker',
+    event = 'VeryLazy',
+    version = '2.*',
+    config = function()
+        require'window-picker'.setup()
+    end
+}, {
     "nvim-neo-tree/neo-tree.nvim",
     version = "*",
     dependencies = {"nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
@@ -91,4 +99,4 @@ return {
 
         }
     end
-}
+}})
