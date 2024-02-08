@@ -67,11 +67,7 @@ vim.keymap.set('n', '<S-TAB>', ':bprevious<CR>', {
 })
 
 -- set keymap that will format the code then save the file
-vim.keymap.set('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', {
-    noremap = true,
-    silent = true,
-    desc = 'Format the code'
-})
+vim.keymap.set("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
 
 -- Insert mode
 -- Keymap for inserting "<ESC>" when "jk" is typed in insert mode

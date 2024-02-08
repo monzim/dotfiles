@@ -18,10 +18,17 @@ return ({{
 
     config = function()
         require('neo-tree').setup {
+            filesystem = {
+                filtered_items = {
+                    visible = true, -- This is what you want: If you set this to `true`, all "hide" just mean "dimmed out"
+                    hide_dotfiles = false,
+                    hide_gitignored = true
+                }
+            },
             popup_border_style = "rounded",
             enable_git_status = true,
             enable_diagnostics = true,
-            group_empty_dirs = false, -- when true, empty folders will be grouped together
+            group_empty_dirs = true, -- when true, empty folders will be grouped together
             -- hijack_netrw_behavior = "open_default", -- netrw disabled, opening a directory opens neo-tree
             -- in whatever position is specified in window.position
             -- "open_current",  -- netrw disabled, opening a directory opens within the

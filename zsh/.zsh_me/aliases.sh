@@ -1,6 +1,10 @@
 # open dotfiles in vscode
 alias dotConfig=code /Users/monzim/dotfiles/zsh
 
+# newvim alias
+alias nv='nvim'
+alias nn='nvim .'
+
 # Docker Compose Aliases
 alias doc='docker compose # Short for "docker compose"'
 alias docb='docker compose build # Build Docker Compose services'
@@ -78,8 +82,9 @@ alias wh='which'
 
 # File Aliases
 alias gocode='cd /Users/monzim/CodeX'
+alias godot='cd /Users/monzim/Downloads'
+alias gostartup='cd /Users/monzim/CodeX/startup'
 alias dotfiles='cd /Users/monzim/dotfiles/'
-alias goang='cd /Users/monzim/CodeX/Angular'
 alias goflt='cd /Users/monzim/CodeX/Flutter'
 alias gohub='cd /Users/monzim/CodeX/Github'
 alias gonext='cd /Users/monzim/CodeX/NextJs'
