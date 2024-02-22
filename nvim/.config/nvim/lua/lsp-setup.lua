@@ -108,8 +108,6 @@ require('mason-lspconfig').setup()
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
 local servers = {
-    -- clangd = {},
-
     gopls = {
         keys = { -- Workaround for the lack of a DAP strategy in neotest-go: https://github.com/nvim-neotest/neotest-go/issues/12
         {
@@ -155,15 +153,16 @@ local servers = {
         }
     },
 
-    -- pyright = {},
     rust_analyzer = {
         filetypes = {'rust'}
 
     },
+
     tsserver = {
         filetypes = {'javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescriptreact',
                      'typescript.tsx'}
     },
+
     -- html = { filetypes = { 'html', 'twig', 'hbs'} },
     dockerls = {},
     docker_compose_language_service = {},
